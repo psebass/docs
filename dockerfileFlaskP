@@ -1,0 +1,14 @@
+# ============================================
+# FLASK PRODUCCIÓN
+# ============================================
+FROM python:3.11-alpine
+RUN adduser -D -s /bin/sh appuser && \
+    apk add --no-cache gcc musl-dev
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt gunicorn
+COPY . .
+RUN chown -R appuser:appuser /app
+USER appuser
+EXPOSE 8000
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "app:app"]
