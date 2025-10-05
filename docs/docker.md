@@ -59,8 +59,9 @@ VOLUME <punto-montaje>
 
 ![DockSPA](/public/dockerfile-SPA.jpeg)
 
+
 ## Dockerfile Flask
 
 ### Ejemplo
 
-![DockFlask](/public/sec%20conf%20dockerfile%20SPA.jpeg)
+![DockFlask](/public/dockerfile-FlaskDes.jpeg)
